@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>나는 대출을 받을 수 있을까?</h2>
+<form action="test.do" method="post">
+<!--    workclass, education, occupation, race, sex-->
+    나이 : <input type="text" name="age" id="age"><br>
+
+    직분 :  <select name="workclass">
+                {% for w in domain[0]  %}
+                    <option value="{{w}}">{{w}}</option>
+                {% endfor %}
+            </select><br>
+    학력 : <select name="education">
+                {% for w in domain[1]  %}
+                    <option value="{{w}}">{{w}}</option>
+                {% endfor %}
+            </select><br>
+    직업 : <select name="occupation">
+                {% for w in domain[2]  %}
+                    <option value="{{w}}">{{w}}</option>
+                {% endfor %}
+            </select><br>
+    인종 : <select name="race">
+                {% for w in domain[3]  %}
+                    <option value="{{w}}">{{w}}</option>
+                {% endfor %}
+            </select><br>
+    성별 : <select name="sex">
+                {% for w in domain[4]  %}
+                    <option value="{{w}}">{{w}}</option>
+                {% endfor %}
+            </select><br>
+    근무시간 : <input type="text" name="hoursperweek" id="hoursperweek">
+    <input type="submit" value="확인">
+</form>
+<h1><font color="red">{{msg}}</font></h1>
+</body>
+</html>
